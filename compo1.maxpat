@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 105.0, 87.0, 1553.0, 960.0 ],
+		"rect" : [ 2196.0, 97.0, 1553.0, 960.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -58,7 +58,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 858.0, 292.0, 122.0, 22.0 ],
 					"style" : "",
-					"text" : "seek 347"
+					"text" : "seek 287"
 				}
 
 			}
@@ -193,7 +193,7 @@
 				"box" : 				{
 					"id" : "obj-11",
 					"maxclass" : "slider",
-					"min" : 347.0,
+					"min" : 287.0,
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
@@ -1219,9 +1219,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 741.0, 675.25, 156.0, 22.0 ],
+					"patching_rect" : [ 741.0, 675.25, 137.0, 22.0 ],
 					"style" : "",
-					"text" : "open ./assets/Decision.wav"
+					"text" : "open ./ms/Decision.wav"
 				}
 
 			}
@@ -1232,9 +1232,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 741.0, 646.25, 146.0, 22.0 ],
+					"patching_rect" : [ 741.0, 646.25, 127.0, 22.0 ],
 					"style" : "",
-					"text" : "open ./assets/Kick_3.wav"
+					"text" : "open ./ms/Kick_3.wav"
 				}
 
 			}
@@ -1303,7 +1303,7 @@
 						"followglobaltempo" : 0,
 						"formantcorrection" : 0,
 						"mode" : "basic",
-						"originallength" : [ 422.4, "ticks" ],
+						"originallength" : [ 36771.1, "ticks" ],
 						"originaltempo" : 120.0,
 						"pitchcorrection" : 0,
 						"quality" : "basic",
@@ -1334,9 +1334,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 81.5, 588.0, 146.0, 22.0 ],
+					"patching_rect" : [ 81.5, 588.0, 127.0, 22.0 ],
 					"style" : "",
-					"text" : "open ./assets/Kick_5.wav"
+					"text" : "open ./ms/Kick_5.wav"
 				}
 
 			}
@@ -1347,9 +1347,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 81.5, 559.0, 169.0, 22.0 ],
+					"patching_rect" : [ 81.5, 559.0, 151.0, 22.0 ],
 					"style" : "",
-					"text" : "open ./assets/Dark_throb.wav"
+					"text" : "open ./ms/Dark_throb.wav"
 				}
 
 			}
@@ -1416,7 +1416,7 @@
 						"followglobaltempo" : 0,
 						"formantcorrection" : 0,
 						"mode" : "basic",
-						"originallength" : [ 40414.76, "ticks" ],
+						"originallength" : [ 268.8, "ticks" ],
 						"originaltempo" : 120.0,
 						"pitchcorrection" : 0,
 						"quality" : "basic",
@@ -2567,8 +2567,8 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-24" : [ "live.gain~", "live.gain~", 0 ],
-			"obj-38" : [ "live.gain~[1]", "live.gain~", 0 ]
+			"obj-38" : [ "live.gain~[1]", "live.gain~", 0 ],
+			"obj-24" : [ "live.gain~", "live.gain~", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
