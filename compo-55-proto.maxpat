@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 127.0, 117.0, 1631.0, 871.0 ],
+		"rect" : [ 1972.0, 239.0, 1631.0, 775.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,6 +38,19 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 94.0, 195.0, 81.0, 22.0 ],
+					"style" : "",
+					"text" : "append 1000"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-2",
 					"maxclass" : "button",
 					"numinlets" : 1,
@@ -55,9 +68,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 296.5, 225.0, 93.0, 22.0 ],
+					"patching_rect" : [ 296.5, 225.0, 83.0, 22.0 ],
 					"style" : "",
-					"text" : "loadmess -40 1"
+					"text" : "loadmess -40"
 				}
 
 			}
@@ -133,20 +146,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 94.0, 236.0, 87.0, 22.0 ],
 					"style" : "",
-					"text" : "0 1000"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-62",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 162.0, 192.0, 90.0, 22.0 ],
-					"style" : "",
-					"text" : "sprintf %i 1000"
+					"text" : "-10 1000"
 				}
 
 			}
@@ -611,7 +611,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 547.0, 104.0, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "0"
+					"text" : "-40"
 				}
 
 			}
@@ -7037,7 +7037,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 613.0, 443.0, 77.0, 22.0 ],
+					"patching_rect" : [ 730.5, 214.0, 77.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -9359,6 +9359,24 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-61", 1 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-4", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-61", 0 ],
+					"disabled" : 0,
+					"hidden" : 0,
+					"source" : [ "obj-4", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-58", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
@@ -9458,16 +9476,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-61", 0 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-58", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-62", 0 ],
+					"destination" : [ "obj-4", 0 ],
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-58", 0 ]
@@ -9489,15 +9498,6 @@
 					"disabled" : 0,
 					"hidden" : 0,
 					"source" : [ "obj-61", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-61", 1 ],
-					"disabled" : 0,
-					"hidden" : 0,
-					"source" : [ "obj-62", 0 ]
 				}
 
 			}
@@ -9854,19 +9854,19 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-18::obj-38" : [ "live.gain~[4]", "live.gain~", 0 ],
-			"obj-84::obj-76::obj-38" : [ "live.gain~[9]", "live.gain~", 0 ],
-			"obj-14::obj-16" : [ "live.gain~[1]", "live.gain~", 0 ],
-			"obj-15::obj-38" : [ "live.gain~[10]", "live.gain~", 0 ],
-			"obj-69::obj-38" : [ "live.gain~[8]", "live.gain~", 0 ],
-			"obj-14::obj-38" : [ "live.gain~[2]", "live.gain~", 0 ],
-			"obj-111::obj-38" : [ "live.gain~[14]", "live.gain~", 0 ],
-			"obj-38::obj-38" : [ "live.gain~[6]", "live.gain~", 0 ],
 			"obj-84::obj-32::obj-38" : [ "live.gain~[11]", "live.gain~", 0 ],
-			"obj-98::obj-38" : [ "live.gain~[13]", "live.gain~", 0 ],
+			"obj-111::obj-38" : [ "live.gain~[14]", "live.gain~", 0 ],
 			"obj-55::obj-38" : [ "live.gain~[5]", "live.gain~", 0 ],
+			"obj-28::obj-38" : [ "live.gain~[7]", "live.gain~", 0 ],
+			"obj-14::obj-16" : [ "live.gain~[1]", "live.gain~", 0 ],
+			"obj-69::obj-38" : [ "live.gain~[8]", "live.gain~", 0 ],
+			"obj-38::obj-38" : [ "live.gain~[6]", "live.gain~", 0 ],
+			"obj-14::obj-38" : [ "live.gain~[2]", "live.gain~", 0 ],
+			"obj-84::obj-76::obj-38" : [ "live.gain~[9]", "live.gain~", 0 ],
+			"obj-98::obj-38" : [ "live.gain~[13]", "live.gain~", 0 ],
+			"obj-18::obj-38" : [ "live.gain~[4]", "live.gain~", 0 ],
 			"obj-88::obj-38" : [ "live.gain~[12]", "live.gain~", 0 ],
-			"obj-28::obj-38" : [ "live.gain~[7]", "live.gain~", 0 ]
+			"obj-15::obj-38" : [ "live.gain~[10]", "live.gain~", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
