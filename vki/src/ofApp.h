@@ -26,7 +26,6 @@ class ofApp : public ofBaseApp, public ofxMidiListener {
 		void newMidiMessage(ofxMidiMessage& eventArgs);
 		void exit();
 
-		float map(float value, float start1, float stop1, float start2, float stop2);
 		void displayMidiInfos();
 
 		stringstream text;
@@ -64,5 +63,6 @@ class ofApp : public ofBaseApp, public ofxMidiListener {
 		boolean up;
 		int state;
 		float m_val, m_maxVal;
+		float m_speed;
 		
 };

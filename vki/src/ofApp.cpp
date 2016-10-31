@@ -15,12 +15,14 @@ int previewHeight = 480;
 void ofApp::setup(){
 
 	//ofSetWindowShape(previewWidth * 1.1 , previewHeight * 1.1);
-	ofSetWindowShape(DEPTH_WIDTH * 2, DEPTH_HEIGHT);
+	//ofSetWindowShape(DEPTH_WIDTH * 2, DEPTH_HEIGHT);
+	ofSetWindowPosition(2024, 200);
 
 	//------------------------
 
 	m_val = 0;
-	m_maxVal = 500;
+	m_speed = 5;
+	m_maxVal = ofGetHeight();
 	//-----------------------
 
 	
@@ -84,9 +86,6 @@ void ofApp::setup(){
 
 }
 //--------------------------------------------------------------
-float ofApp::map(float value, float start1, float stop1, float start2, float stop2) {
-	return start2 + (stop2 - start2) * ((value - start1) / (stop1 - start1));
-}
 void ofApp::generateDepthDisplayImage() {
 
 	// MAKE SURE WE HAVE A DEPTH SOURCE BEFORE WE ATTEMPT TO MANIPULATE
@@ -140,10 +139,10 @@ void ofApp::newMidiMessage(ofxMidiMessage& msg) {
 void ofApp::update(){
 
 	if (up && m_val < m_maxVal) {
-		m_val++;
+		m_val+= m_speed;
 	}
 	else if (!up && m_val>0) {
-		m_val--;
+		m_val-= m_speed;
 	}
 		
 		
