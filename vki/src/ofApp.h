@@ -11,8 +11,6 @@ class ofApp : public ofBaseApp, public ofxMidiListener {
 		void update();
 		void draw();
 
-		void exit();
-
 		void keyPressed(int key);
 		void keyReleased(int key);
 		void mouseMoved(int x, int y );
@@ -26,12 +24,45 @@ class ofApp : public ofBaseApp, public ofxMidiListener {
 		void gotMessage(ofMessage msg);
 
 		void newMidiMessage(ofxMidiMessage& eventArgs);
+		void exit();
+
+		float map(float value, float start1, float stop1, float start2, float stop2);
+		void displayMidiInfos();
 
 		stringstream text;
 
 		ofxMidiIn midiIn;
 		ofxMidiMessage midiMessage;
 
+		//ofImage img;
+
+		boolean useKinect;
 		ofxKFW2::Device kinect;
+
+		//---------------------------
+		ICoordinateMapper* coordinateMapper;
+
+		ofImage bodyIndexImg, foregroundImg;
+		vector<ofVec2f> colorCoords;
+		int numBodiesTracked;
+		bool bHaveAllStreams;
+
+		void exampleBodyIndexColor();
+
+		//--------------------------
+		float	nearClipping, farClipping;
+
+		void updateRawDepthLookupTable();
+		void generateDepthDisplayImage();
+
+		vector<unsigned char>		depthLookupTable;
+		ofPixels_<unsigned char>	depthDisplay;
+		ofImage						depthDisplayImage;
+
+		//---------------------------
+
+		boolean up;
+		int state;
+		float m_val, m_maxVal;
 		
 };
