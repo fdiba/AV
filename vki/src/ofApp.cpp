@@ -47,7 +47,7 @@ void ofApp::setup(){
 
 	//thread.startThread(true);    // blocking, non verbose
 
-	useKinect = false;
+	useKinect = true;
 
 	if (useKinect) {
 		kinect.open();
@@ -79,6 +79,10 @@ void ofApp::setup(){
 		nearClipping = 50.0;
 		farClipping = 2000.0;
 		updateRawDepthLookupTable();
+
+		//--------------------------------------
+
+		img.allocate(DEPTH_WIDTH, DEPTH_HEIGHT, OF_IMAGE_COLOR);
 	}
 
 	//kinect.initBodySource();
@@ -150,11 +154,43 @@ void ofApp::update(){
 	if (useKinect) {
 		kinect.update();
 
-		generateDepthDisplayImage();
+		//generateDepthDisplayImage();
 
 		//exampleBodyIndexColor();
 
+		editDepthImg();
+
 	}
+}
+void ofApp::editDepthImg() {
+
+	auto depthSource = kinect.getDepthSource();
+
+	if (depthSource->isFrameNew()) {
+		auto& depthPixels = depthSource->getPixels();
+		for (int y = 0; y < DEPTH_HEIGHT; y++) {
+			for (int x = 0; x < DEPTH_WIDTH; x++) {
+
+				int index = x + y*DEPTH_WIDTH;
+
+				if (depthPixels[index] < 1000) {
+
+					ofColor c = ofColor::red;
+					img.setColor(x, y, c);
+
+				} else {
+
+					ofColor c = ofColor::black;
+					img.setColor(x, y, c);
+
+				}
+
+			}
+		}
+
+		img.update();
+	}
+
 }
 void ofApp::exampleBodyIndexColor() {
 
@@ -252,7 +288,10 @@ void ofApp::draw(){
 	
 	if (useKinect) {
 
+		img.draw(0, 0);
 
+
+		/*
 		bodyIndexImg.draw(0, 0);
 		foregroundImg.draw(DEPTH_WIDTH, 0);
 
@@ -261,7 +300,7 @@ void ofApp::draw(){
 		ss << "Tracked bodies: " << numBodiesTracked;
 		if (!bHaveAllStreams) ss << endl << "Not all streams detected!";
 		ofDrawBitmapStringHighlight(ss.str(), 20, 20);
-
+		*/
 		
 	}
 	//kinect.getColorSource()->draw(0, 0, 320*m, 180*m);

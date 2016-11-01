@@ -33,7 +33,8 @@ class ofApp : public ofBaseApp, public ofxMidiListener {
 		ofxMidiIn midiIn;
 		ofxMidiMessage midiMessage;
 
-		//ofImage img;
+		ofImage img;
+		void editDepthImg();
 
 		boolean useKinect;
 		ofxKFW2::Device kinect;
